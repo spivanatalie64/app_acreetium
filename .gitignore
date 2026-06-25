@@ -1,0 +1,11 @@
+src/
+depot_tools/
+_gclient*/
+.gclient*
+.cipd/
+.gcs_entries
+old_src*
+.*.swp
+build.log
+prebuilt
+apks

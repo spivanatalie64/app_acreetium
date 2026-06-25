@@ -1,0 +1,16 @@
+name: Sign Acreetium
+on:
+  push:
+    paths:
+      - 'trigger-release.txt'
+      - 'prebuilt/**'
+  workflow_dispatch:
+
+jobs:
+  sign:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Sign
+        run: |
+          echo "Signing release..."

@@ -1,0 +1,17 @@
+name: Build Acreetium
+on:
+  push:
+    paths:
+      - 'trigger-build.txt'
+      - 'patches/**'
+      - 'build.sh'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build
+        run: |
+          bash build.sh -c -s -r "$(cat trigger-build.txt)"
